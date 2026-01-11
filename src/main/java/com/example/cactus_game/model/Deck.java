@@ -1,14 +1,12 @@
 
 package com.example.cactus_game.model;
 
-import java.util.ArrayDeque;
+public interface Deck {
+  public void fillDeck();
 
-public class Deck {
-  private ArrayDeque<Card> cards;
+  public Card drawCard();
 
-  public Deck(int size) {
-    this.cards = new ArrayDeque<Card>();
-  }
+  public void addCard(Card card);
 
-  public void shuffle() {}
+  public void shuffle();
 }
