@@ -8,6 +8,12 @@
   <name>cactus_game</name>
   <url>http://maven.apache.org</url>
 
+  <!-- Properties -->
+  <properties>
+    <maven.compiler.source>25</maven.compiler.source>
+    <maven.compiler.target>25</maven.compiler.target>
+  </properties>
+
   <!-- Dependencies -->
   <dependencies>
     <dependency>
@@ -18,7 +24,7 @@
     </dependency>
   </dependencies>
 
-  <!-- BUILD -->
+  <!-- Build -->
   <build>
     <plugins>
       <plugin>
