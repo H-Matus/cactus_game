@@ -7,14 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CactusDeck implements Deck {
-  private ArrayDeque<Card> cards;
-  private RandomShuffler shuffler;
+  private ArrayDeque<Card> cards = new ArrayDeque<Card>();
+  private RandomShuffler shuffler = new RandomShuffler();
 
-  public CactusDeck() {
-    this.cards = new ArrayDeque<Card>();
-    this.shuffler = new RandomShuffler();
-    this.fillDeck();
-  }
+  public CactusDeck() {}
 
   @Override
   public void fillDeck() {
@@ -46,6 +42,10 @@ public class CactusDeck implements Deck {
     this.cards.addAll(tempDeck);
   }
 
+  /**
+   * Overriden toString function used for testing the deck.
+   * @return String of all cards in the deck.
+   */
   @Override
   public String toString() {
     String ret = "";

@@ -2,41 +2,39 @@
 package com.example.cactus_game.game;
 
 import com.example.cactus_game.model.CactusDeck;
+import com.example.cactus_game.model.CactusHand;
 import com.example.cactus_game.model.Card;
-import com.example.cactus_game.model.Rank;
-import com.example.cactus_game.model.Suit;
 
 /**
  *
  */
 public class Cactus implements Game {
-  /**
-   *
-   */
-  private int numPlayers;
+  public static final int MIN_NUM_PLAYERS = 2;
+  public static final int MAX_NUM_PLAYERS = 4;
 
   private CactusDeck deck;
 
-  /**
-   *
-   */
-  public Cactus(int numPlayers) {
-    this.numPlayers = numPlayers;
-    this.deck = new CactusDeck();
-  }
+  private CactusDeck discardDeck;
 
-  public Cactus() {
-    this.numPlayers = 2;
+  private CactusHand[] hands;
+
+  private int numPlayers;
+
+  public Cactus(int numPlayers) {
     this.deck = new CactusDeck();
+    this.discardDeck = new CactusDeck();
+    this.hands = new CactusHand[numPlayers];
+    this.numPlayers = numPlayers;
   }
 
   /**
    *
    */
   @Override
-  public void start() {
-    System.out.println("Starting Cactus game...");
-    this.setup();
+  public void setup() {
+    this.deck.fillDeck();
+
+    this.fillHands();
   }
 
   @Override
@@ -45,17 +43,15 @@ public class Cactus implements Game {
   @Override
   public void playTurn(String playerInput) {}
 
-  private void setup() {
-    System.out.println("Testing the deck:");
-    System.out.println(this.deck);
-    System.out.println("Picking a card:");
-    this.deck.drawCard();
-    System.out.println("this.deck");
-    System.out.println("Reshuffling the deck:");
-    this.deck.shuffle();
-    System.out.println(this.deck);
-    System.out.println("Adding a card:");
-    this.deck.addCard(new Card(Suit.SPADES, Rank.ACE));
-    System.out.println(this.deck);
+  private void fillHands() {
+    for (int playerIdx = 0; playerIdx < this.numPlayers; playerIdx++) {
+      Card tempCards[] = new Card[CactusHand.HAND_SIZE];
+
+      for (int cardIdx = 0; cardIdx < CactusHand.HAND_SIZE; cardIdx++) {
+        tempCards[cardIdx] = this.deck.drawCard();
+      }
+
+      this.hands[playerIdx] = new CactusHand(tempCards);
+    }
   }
 }

@@ -18,8 +18,16 @@ public class CliUI {
 
       switch (input) {
         case "1":
-          Cactus cactus = new Cactus();
-          cactus.start();
+          int numPlayers = 0;
+
+          System.out.println("Starting Cactus game...");
+          System.out.print("Insert the number of players in the game (2 <= x <= 4): ");
+          while (numPlayers < Cactus.MIN_NUM_PLAYERS || Cactus.MAX_NUM_PLAYERS > 4) {
+            numPlayers = Integer.parseInt(scanner.nextLine());
+          }
+
+          Cactus cactus = new Cactus(2);
+          cactus.setup();
           break;
         case "2":
           System.out.println("Exiting the program.");
