@@ -1,5 +1,5 @@
 
-package util;
+package com.example.cactus_game.util;
 
 import java.util.List;
 

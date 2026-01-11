@@ -1,5 +1,5 @@
 
-package game;
+package com.example.cactus_game.game;
 
 /**
  *

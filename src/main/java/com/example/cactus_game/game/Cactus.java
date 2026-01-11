@@ -1,5 +1,5 @@
 
-package game;
+package com.example.cactus_game.game;
 
 /**
  *
@@ -15,6 +15,10 @@ public class Cactus implements Game {
    */
   public Cactus(int numPlayers) {
     this.numPlayers = numPlayers;
+  }
+
+  public Cactus() {
+    this.numPlayers = 2;
   }
 
   /**

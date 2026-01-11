@@ -1,7 +1,7 @@
 
 package com.example.cactus_game;
 
-import ui.CliUI;
+import com.example.cactus_game.ui.CliUI;
 
 /**
  * Main class
