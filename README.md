@@ -53,3 +53,7 @@ Then run the program by using this command from root directory:
 ```
 java -jar target/cactus_game-1.0-SNAPSHOT.jar
 ```
+To clean and then build the package using Maven in root directory:
+```
+mvn clean package
+```
