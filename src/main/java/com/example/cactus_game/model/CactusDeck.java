@@ -42,6 +42,16 @@ public class CactusDeck implements Deck {
     this.cards.addAll(tempDeck);
   }
 
+  @Override
+  public Card readTopCard() {
+    return this.cards.peekFirst();
+  }
+
+  @Override
+  public int getSize() {
+    return this.cards.size();
+  }
+
   /**
    * Overriden toString function used for testing the deck.
    * @return String of all cards in the deck.

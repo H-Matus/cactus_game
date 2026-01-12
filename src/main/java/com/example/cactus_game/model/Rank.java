@@ -13,9 +13,17 @@ public enum Rank {
   EIGHT(8),
   NINE(9),
   TEN(10),
-  JACK(11),
-  QUEEN(12),
-  KING(13);
+  JACK(10),
+  QUEEN(10),
+  KING(10);
 
-  private Rank(int value) {}
+  private int value;
+
+  private Rank(int value) {
+    this.value = value;
+  }
+
+  public int getValue() {
+    return this.value;
+  }
 }

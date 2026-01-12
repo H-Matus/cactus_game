@@ -15,7 +15,7 @@ public record Card(Suit suit, Rank rank) {
   public String toString() {
     String ret = "";
 
-    ret += this.rank + " of " + this.suit + "\n";
+    ret += this.rank + " of " + this.suit;
 
     return ret;
   }

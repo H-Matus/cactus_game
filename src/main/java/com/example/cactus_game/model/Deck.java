@@ -9,4 +9,8 @@ public interface Deck {
   public void addCard(Card card);
 
   public void shuffle();
+
+  public Card readTopCard();
+
+  public int getSize();
 }

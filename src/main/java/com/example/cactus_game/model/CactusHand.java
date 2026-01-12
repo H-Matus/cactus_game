@@ -14,7 +14,7 @@ public class CactusHand implements Hand {
     this.handCards[idx] = card;
   }
 
-  public Card removeCard(int idx) {
+  public Card getCard(int idx) {
     return this.handCards[idx];
   }
 
